@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<h1>[[${msg}]]</h1>
+<form action="/save" method="post">
+<input name="data" type="text">
+    <input type="email" name="email" placeholder="email">
+<input type="submit">
+</form>
+<ol>
+    <li th:each="u : ${users}">
+        <a th:href="@{'user-' + ${u.id}}" th:text="${u.name}"></a>
+    </li>
+</ol>
+</body>
+</html>
